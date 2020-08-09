@@ -8,6 +8,270 @@ most recent build should be at the top of this file.
 
 Thanks!
 
+3.6.0 Beta 1
+------------
+### ! For OS X 10.11 (El Capitan) or later only !
+- Lift deployment target to macOS 10.11 & start modernizing code
+- Replaced MASPreferences with Storyboard implementation (Preferences window)
+
+3.5.6
+-----
+- Vienna is now notarized (needed by macOS Catalina and later)
+- Much improved OpenReader support :
+    - sensibly decrease the number of network requests:
+        - use single 'mark-all-as-read' requests for marking folders read
+        - avoid requesting feeds which haven't been updated
+   - work around a blockade put on by Inoreader
+   - add ‘hidden’ preference to use specific AppId/AppKey with Inoreader:
+
+       > Each user of Inoreader user is able to define (and monitor) a personal
+       > set of AppId / AppKey values through Inoreader preferences located at
+       > https://www.inoreader.com/all_articles#preferences-developer
+       >
+       > To have Vienna use these values instead of the default one, you have to
+       > type in Terminal two commands similar to the following:
+       >
+       >>` defaults write uk.co.opencommunity.vienna2 SyncingAppId 9876543210`
+       >>` defaults write uk.co.opencommunity.vienna2 SyncingAppKey JrS2smGyidtsxBOytDN1OWsSPcGURKWR`
+       >
+       > To get back to the default values:
+       >
+       >>` defaults delete uk.co.opencommunity.vienna2 SyncingAppId`
+       >>` defaults delete uk.co.opencommunity.vienna2 SyncingAppKey`
+
+    - adapt to feed identifiers used by TheOldReader and FreshRSS (numerical Ids instead of URLs)
+    - improve feed infos synchronisation between Vienna and servers (feed name, homepage, folder/label)
+    - fix a problem with credential input in sync preferences panel
+    - improve first authentication on OpenReader server
+- Fix feed subscription button in browser view
+- Fix some problems with enabling/disabling of menu items and toolbar items
+- Trim author names in database
+- Update address of ArsTechnica feed
+- Update components (FMDB 2.7.7 through Swift Package Manager insted of Carthage, TRVSURLSessionOperation)
+- Modernize code, localization & building tools
+
+__Note__ : this version will upgrade the database ; but the newer version of the database remains fully compatible with all Vienna 3.x.x versions. So there is no reason to fear upgrading, or at least testing this 3.5.6 version.
+
+3.5.5
+-----
+- Fix sizes of cells in Unified view
+- Fix our own RSS URL
+- Fix multiple problems with input and encoding of OpenReader credentials
+- fix selection of next unread article through spacebar when the article view is empty
+- Update link templates for zh-Hant language
+- Update Swift support to version 5
+- Udate to Xcode 11
+- Update Sparkle version to 1.22
+- Improve build system
+- Replace deprecated routines
+- Fix some problem with processing of localizable strings
+
+__Note__ : this version will upgrade the database ; but the newer version of the database remains fully compatible with all Vienna 3.x.x versions. So there is no reason to fear upgrading, or at least testing this 3.5.5 version.
+
+3.5.4
+-----
+- Fix dialog sheet handling definition of smart folders with multiple criteria
+- Use w3.org feed validator instead of feedvalidator.org
+- Modify User-Agent header used for fetching feeds (fix problem with Oxford University Press)
+- On macOS Mojave, fix authorization for plugins using AppleScript
+- Fix 'Add to Safari Reading List' plugin regarding articles with empty body
+- Some improvements to macOS Mojave's dark mode
+- Make article list's progress indicators less prominent
+- Trim unneeded whitespaces in URLs of new subscriptions
+- Optimize builtin images (losslessly reduce size of PNG and JPEG)
+- Replace deprecated SDK calls
+- Make process and logs more verbose regarding OpenReader server login failures
+- Update Swift support to version 4.2
+- Optimize Info.plist
+- Optimize build
+
+3.5.3
+-----
+- Fix crash with problematic feed
+- Fix parsing of feeds without titles
+- Use basic preemptive authentication to work around some servers which do not send 401 challenges
+- Fix update of tabs color when window gains/loses focus
+- Prevent Vienna from appearing among dedicated browser applications in System Preferences/General
+- Fix usability problem with search box
+- Add DuckDuckGo and Qwant among options for search box
+- Fix Twitter option for search box
+- Use https for searching
+- Add support for dark mode to Credits
+- Fix tooltips in folders tree
+- Update Sparkle to 1.21.2, autorevision to 1.21
+
+3.5.2
+-----
+- Fix behavior when a Javascript attemps to close a tab
+- Refactor browser pane / browser dependency
+- Update Sparkle to 1.21.1
+
+3.5.1
+-----
+- Add ‘Open With’ submenu to contextual menu for items in Downloads window
+- Allow ‘Open’ in Downloads window even when file is not yet fully downloaded (handy for audio files)
+- Improve tabs' support of macOS Mojave's dark mode
+- Fix fetching of feeds from OpenReader server
+- Sync OpenReader feed names
+- Fix feed unsubscribes and moves for TheOldReader
+- Fix alignment of feed/folders names which are in Arabic
+- Fix double escaping on feed title / description in OPML files
+- Update development team in About box
+
+3.5.0
+-----
+- Fix dark mode for horizontal layout
+- Improve support of Emoji characters (use CoreText to draw cells)
+
+3.5.0 rc 1
+----------
+- Initial adaptations to macOS Mojave's dark mode (work in progress)
+- Improve right to left support
+- Improve tab bar management ; fix video which continued to play when last tab was closed
+- Fix background color of selected folder on OS X 10.9
+- Update FMDB to 2.7.5
+
+3.5.0 Beta 1
+------------
+- Modernize network access (replace ASIHTTPRequest with a wrapper above NSURLSession). Vienna's memory management is now exclusively based on Automatic Reference Counting.
+- Fix an encoding issue in localizable strings
+
+3.4.2
+-----
+- Fix crash on startup on Mac OS X 10.9 and 10.10
+- Changed file extension for binaries upload to tar.gz (instead of .tgz) as Github's user interface got picky again
+
+3.4.0
+-----
+- Initial update for Xcode 10
+- Update for SwiftLint 0.25.1
+- Update Crowdin configuration for Brazilian Portuguese
+
+3.4.0 Beta 1
+------------
+- New article menu and keyboard shortcut (Command-Y) to get back to the main tab (articles list)
+- New "Share With Pinboard" plugin
+- Remove obsolete Cocoalicious plugin
+- New lithuanian translation, contributed by Andrius Družinis-Vitkus
+- Improved Czech, Simplified Chinese, Galician and Russian translations
+- Fix a bug that prevented adding a feed in Simplified Chinese
+- New framework for managing tabs (MMTabBarView instead of PSMTabBarControl)
+- Use Carthage instead of Cocoapods to manage dependencies
+- Project cleanup and reorganization
+
+3.3.0
+-----
+- Improve Ukrainian localization
+
+3.3.0 rc 1
+----------
+- Fix a problem with Sparkle autoupdate
+
+3.3.0 Beta 1
+------------
+- Improve loading of tabs: on application re-open, load of each tab is delayed until the user selects it
+- Change default download location to the macOS default one
+- Fix bug where "Show in Finder" in Downloads window didn't work unless file was fully downloaded
+- Update developer documentation & change tests configuration
+
+3.2.1
+-----
+- Fix a crash on parsing some XML files
+- Fix current feed URL not being displayed on edition of a feed
+- Updated translations (Danish, Spanish, German, Russian)
+
+3.2.0
+-----
+- Use .tgz file extension for downloadable archives of Vienna.app and .dSYM files
+
+3.2.0 rc 1
+------------
+- Fix some OpenReader error handling
+- Remove a tab bar animation introduced in 3.2.0 Beta 1
+- Update copyright information
+
+3.2.0 Beta 3
+------------
+- Fix persistent tab bar at launch
+- Update FMDB to 2.7.4
+
+3.2.0 Beta 2
+------------
+- Fix crashes on systems prior to Sierra
+
+3.2.0 Beta 1
+------------
+### ! For OS X 10.9 or later only !
+- New toolbar icons
+- Use default external application to view content of cached XML files
+- Show acknowledgements in "About" panel
+- Technical updates :
+	- Converted NIBs to XIBs and to Auto Layout
+	- Moved translation system to Base localization and Crowdin
+	- Refactored some UI elements to separate XIB files
+	- Refactorings (to KVO or delegate patterns, and conversion of various elements to properties)
+	- Change OpenReader to use asynchronous requests
+	- Update to Xcode 9
+	- Conversion of code for some UI elements to Swift4
+	- Replace CDEvents with Swift-based FSEvents implementation
+	- Update autorevision to 1.20
+	- Update Sparkle to 1.18.1
+	- Update MASPreferences to 1.3.0
+	- plus various housekeeping changes…
+
+3.1.16
+------
+- Fix article selection after an article is deleted from within the 'Unread Articles' folder
+- Fix bugs related to multithreading
+- Fix handling of impossibility of creating the database
+
+3.1.15
+------
+- Fix article list not scrolling to top when selecting a folder
+- Fix 'Skip Folder' not selecting the first unread article in the next folder with unread articles
+
+3.1.14
+------
+- Fix article pane not updating on article deletion from the 'Unread Articles' folder
+
+3.1.13
+------
+- Fixes related to searching and smart folders
+- Fix for selection of first article when jumping on next feed
+- Better fix for unwanted reload of the article currently being read during sync
+
+3.1.12
+------
+- Fix crashes induced by some URLs
+- Fix crash on macOS 10.13 High Sierra related to Activity window
+- Fix unwanted reload of the article currently being read during sync
+- Fix selection of current article on change of sort criterion/order
+- Fix bug where Vienna doesn't quit when you press ‘Quit Vienna’ in the Database Upgrade window
+- Truncate long text items with an ellipsis
+
+3.1.11
+------
+- Fix deleting article from smart folder or filtered folder
+- Fix selection of last unread article with Next Unread command
+- Update FMDB to 2.7.2
+
+3.1.10
+------
+- Fix access to Get Info window
+- Fix CoreAnimation related problems
+
+3.1.9
+-----
+- Change the website to vienna-rss.com as the old domain name (vienna-rss.org) could not be renewed. Perform a minor database evolution to update this.
+- Add a plug-in supporting wallabag.it
+- Show acknowledgements in "About" dialog box
+- Fix del.icio.us URL
+- Fix an issue with icon
+- Change status bar icons to scalable pdfs
+- Remove textures in some windows, change some .nib to .xib
+- Refactor things (window preferences code, delegates, organization of help files …)
+- Modernize build architecture (Xcode 8.2, update pods)
+
 3.1.8
 -----
 - Fixed an External XML Entity (XXE) vulnerability which allowed servers to steal the content of files on the machine running Vienna
