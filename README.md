@@ -1,94 +1,82 @@
-![Vienna](http://vienna-rss.sourceforge.net/img/vienna_logo.png)
+![Vienna](https://www.vienna-rss.com/images/vienna_logo.png)
 
-[![Build Status](https://travis-ci.org/ViennaRSS/vienna-rss.svg?branch=master)](https://travis-ci.org/ViennaRSS/vienna-rss) [![Stories in Ready](https://badge.waffle.io/viennarss/vienna-rss.png?label=ready&title=Ready)](https://waffle.io/viennarss/vienna-rss)
+[![Build status](https://github.com/ViennaRSS/vienna-rss/actions/workflows/xcodebuild.yml/badge.svg)](https://github.com/ViennaRSS/vienna-rss/actions/workflows/xcodebuild.yml)
+[![Localization status](https://d322cqt584bo4o.cloudfront.net/vienna-rss/localized.svg)](https://crowdin.com/project/vienna-rss "Crowdin")
 
-[Vienna](http://www.vienna-rss.org) is an RSS/Atom reader for Mac OS X.
+[Vienna](https://www.vienna-rss.com) is an RSS/Atom/JSON Feed reader for macOS.
+
+Vienna offers an experience modeled after Apple Mail: quickly scan feed summaries, then open individual articles for deep reading within a simplified browser view.
 
 Vienna can connect directly to the websites you want to track.
-Additionally or alternatively, you can also sync with a server supporting the [Open Reader API](http://rss-sync.github.io/Open-Reader-API/rssconsensus/) (an adaptation of the now deceased Google Reader API). Vienna has been successfully tested with BazQux.com, FeedHQ.org, InoReader.com and TheOldReader.com.
+Additionally/alternatively, you can sync with a cloud based server supporting the [Open Reader API](http://rss-sync.github.io/Open-Reader-API/rssconsensus/) (an adaptation of the now deceased Google Reader API). Vienna has been successfully tested with BazQux.com, FreshRSS.org, FeedHQ.org, InoReader.com and TheOldReader.com.
+
+
+Compatibility
+-------------
+
+Vienna 3.11.x will require a minimum of macOS 10.15 (Catalina).
+
+Vienna 3.9.x and 3.10.x require a minimum of macOS 10.13 (High Sierra).  
+Vienna 3.8.x requires a minimum of macOS 10.12 (Sierra).  
+Vienna 3.6.x and 3.7.x require a minimum of OS X 10.11 (El Capitan).  
+Vienna 3.2.x to 3.5.x require a minimum of OS X 10.9 (Mavericks).  
+Vienna 3.1.x requires a minimum of OS X 10.8 (Mountain Lion).  
+Vienna 3.0.x requires a minimum of OS X 10.6 (Snow Leopard).
+
 
 Installing
 ----------
 
-Admins upload release and test versions at [bintray](https://bintray.com/viennarss/vienna-rss/vienna-rss/) and [Sourceforge](https://sourceforge.net/projects/vienna-rss/files/).  
-Alternatively, you can download releases from the [GitHub Releases page](https://github.com/ViennaRSS/vienna-rss/releases)
+Admins upload release and test versions at the [GitHub Releases page](https://github.com/ViennaRSS/vienna-rss/releases).  
+Alternatively, you can download releases from [Sourceforge](https://sourceforge.net/projects/vienna-rss/files/).
 
 **Homebrew**
 
-Vienna is also available as a Cask for [Homebrew Cask](https://github.com/phinze/homebrew-cask).
-
-    brew cask install vienna
-
-
+Vienna is also available as a Cask for [Homebrew Cask](https://github.com/Homebrew/homebrew-cask).
+```bash
+brew install --cask vienna
+```
 
 Getting support
 ---------------
 
-If the in-application help files and the [FAQs](http://www.vienna-rss.org/?page_id=96) don’t answer your questions, head over to our [Support forum](http://forums.cocoaforge.com/viewforum.php?f=18) which is hosted by Cocoaforge.
+If the in-application help files and the [FAQ](https://www.vienna-rss.com/faq) don’t answer your questions, head over to our [Discussions page](https://github.com/ViennaRSS/vienna-rss/discussions) on GitHub.
 
 Reporting an issue
 ------------------
 
-If after reading the forum and asking your questions there, you are convinced that there is a problem in Vienna's code or an important feature is missing, you may open an [issue](https://github.com/ViennaRSS/vienna-rss/issues?direction=desc&sort=created&state=open) on Github.
+If after reading the Discussions page or asking your questions there, you are convinced that there is a problem in Vienna's code or an important feature is missing, you may open an [issue](https://github.com/ViennaRSS/vienna-rss/issues?direction=desc&sort=created&state=open) on Github.
 
-Be concise, but as precise as possible to allow other people reproducing the issue. To keep things short, you can provide a link to a relevant thread or message on the Cocoaforge forum.
+Be concise, but as precise as possible to allow other people reproducing the issue. To keep things short, you can provide a link to a relevant discussion.
 
 Contributing
 ------------
 
 Want to contribute? Great! There are many ways you can, even if you aren't a developer.
 
-### Localizing and translating ###
+This project has strict rules regarding usage of so-called "AI". Please see the [LLM usage policy](./Documentation/LLM-Usage-Policy.md).
 
-We need help keeping Vienna translations up to date into different languages. Apart from English, here are the languages for which a localization effort has started:
+### Writing code
 
-* German
-* French
-* Swedish
-* Italian
-* Dutch
-* Traditional Chinese
-* Spanish
-* Japanese
-* Korean
-* Brazilian Portuguese
-* Simplified Chinese
-* Danish
-* Czech
-* Euskara (Basque)
-* Russian
-* Ukrainian
+Please check [Contributing.md](./Documentation/Contributing.md). An entry point to the project's structure is in [Architecture.md](./Documentation/Architecture.md).
 
-Have a look at current localizations in their respective _.lproj_ folders. While translating, the [LangSwitch](http://www.seoxys.com/langswitch-2/) freeware might be handy for checking contexts.
+### Localizing ###
+
+We need help keeping Vienna translations up to date into different languages. You can contribute localizations at [Crowdin](https://crowdin.com/project/vienna-rss). Registration is required, but the account is free. Contact us if you want to contribute for a language that is not yet listed. Do not localize the project's files directly.
 
 ### Writing custom styles
 
 Vienna supports a variety of different display styles for articles. These styles are provided on the Styles sub-menu off the View menu. A style is a combination of an HTML template that is used to control the placement of various parts of the article and a CSS stylesheet that controls the appearance of the article.
 
-You can write styles by referring to [this document](http://www.vienna-rss.org/?page_id=65). Have a look at existing styles in the __Styles__ folder.
+You can write styles by referring to [this document](https://www.vienna-rss.com/development/creating-styles). Have a look at existing styles in the __Styles__ folder.
 
 ### Writing plugins
 
 Vienna supports plugins which are installed in menus and/or on the toolbar and can run defined actions. These plugins are XML-based and can be created by editing a simple .plist-file without any knowledge of Cocoa programming, in as little as 15 minutes.
 
-You can write plugins by referring to [this document](http://www.vienna-rss.org/?page_id=120). Have a look at existing plugins in the __Plugins__ folder.
-
-### Writing code
-
-The current version of Vienna requires Xcode 7 and Mac OS X 10.11 SDK. We will be officially moving to Xcode 8 and macOS Sierra SDK once it has been released. Currently the Unit Tests require Xcode 8 and Swift 3.
-
-Vienna uses [cocoapods](http://cocoapods.org) for managing dependencies. When building, make sure to always open the Xcode workspace `Viennna.xcworkspace` instead of a project file.
-
-You should have a basic knowledge of Git and read these [advices on workflow](https://github.com/ViennaRSS/vienna-rss/wiki/Good-manners-with-Git).
-
-As a starting point, search for any [issues with the *help-wanted* label](https://github.com/ViennaRSS/vienna-rss/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted).
-
-Please let us know what you are working on by posting an issue on Vienna's github and assigning it to yourself.
-
-For more information please check [CONTRIBUTING.md](./CONTRIBUTING.md).
-
+You can write plugins by referring to [this document](https://www.vienna-rss.com/development/creating-plugins). Have a look at existing plugins in the __Plugins__ folder.
 
 Licensing
 ---------
 
-[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+[Apache License, Version 2.0](LICENCE.md).
